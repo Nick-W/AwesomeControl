@@ -1,0 +1,402 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DeepLogic.Shared</name>
+    </assembly>
+    <members>
+        <member name="M:DeepLogic.Shared.Attributes.DeepLogicModule.#ctor(System.Collections.Generic.List{System.Type},System.String,System.String,System.String)">
+            <summary>
+            FIXME-StubDoc: DeepLogic Module
+            </summary>
+            <param name="Dependencies">Module depenency list and load order</param>
+            <param name="Header">Module header</param>
+            <param name="Version">Module version</param>
+            <param name="Key">Unique Module key</param>
+        </member>
+        <member name="T:DeepLogic.Shared.Net.Channels.SubscriberCallback">
+            <summary>
+            Callback type for the subscriber
+            </summary>
+            <param name="Channel">Calling Channel</param>
+            <param name="Message">Dynamic Payload</param>
+        </member>
+        <member name="T:DeepLogic.Shared.Net.Channels.Channel">
+            <summary>
+            FIXME
+            </summary>
+        </member>
+        <member name="M:DeepLogic.Shared.Net.Channels.Channel.#ctor(System.String,System.String,DeepLogic.Shared.Net.Channels.ChannelFlags)">
+            <summary>
+            FIXME
+            </summary>
+            <param name="Key"></param>
+            <param name="Description"></param>
+            <param name="Flags"></param>
+        </member>
+        <member name="M:DeepLogic.Shared.Core.ICrypto.EncryptToString(System.String)">
+            ----------- The commonly used methods ------------------------------    
+            Encrypt some text and return a string suitable for passing in a URL.
+        </member>
+        <member name="M:DeepLogic.Shared.Core.ICrypto.Encrypt(System.Byte[])">
+            Encrypt some bytes and return an encrypted byte array.
+        </member>
+        <member name="M:DeepLogic.Shared.Core.ICrypto.Encrypt(System.String)">
+            Encrypt some text and return an encrypted byte array.
+        </member>
+        <member name="M:DeepLogic.Shared.Core.ICrypto.DecryptString(System.String)">
+            The other side: Decryption methods
+        </member>
+        <member name="M:DeepLogic.Shared.Core.ICrypto.DecryptToString(System.Byte[])">
+            Decryption when working with byte arrays.    
+        </member>
+        <member name="M:DeepLogic.Shared.Core.ICrypto.StrToByteArray(System.String)">
+            Convert a string to a byte array.  NOTE: Normally we'd create a Byte Array from a string using an ASCII encoding (like so).
+        </member>
+        <member name="M:DeepLogic.Shared.Dispatcher.ServiceQueryMultiple``1(DeepLogic.Shared.Services)">
+            <summary>
+            NOT YET IMPLEMENTED (No concurrent service support)
+            </summary>
+        </member>
+        <member name="M:DeepLogic.Shared.Core.HexUtils.GetBytes(System.String)">
+            <summary>
+            Creates a byte array from the hexadecimal string. Each two characters are combined
+            to create one byte. First two hexadecimal characters become first byte in returned array.
+            Non-hexadecimal characters are ignored. 
+            </summary>
+            <param name="hexString">string to convert to byte array</param>
+            <param name="discarded">number of characters in string ignored</param>
+            <returns>byte array, in the same left-to-right order as the hexString</returns>
+        </member>
+        <member name="M:DeepLogic.Shared.Core.HexUtils.InHexFormat(System.String)">
+            <summary>
+            Determines if given string is in proper hexadecimal string format
+            </summary>
+            <param name="hexString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DeepLogic.Shared.Core.HexUtils.IsHexDigit(System.Char)">
+            <summary>
+            Returns true is c is a hexadecimal digit (A-F, a-f, 0-9)
+            </summary>
+            <param name="c">Character to test</param>
+            <returns>true if hex digit, false if not</returns>
+        </member>
+        <member name="M:DeepLogic.Shared.Core.HexUtils.HexToByte(System.String)">
+            <summary>
+            Converts 1 or 2 character string into equivalant byte value
+            </summary>
+            <param name="hex">1 or 2 character string</param>
+            <returns>byte</returns>
+        </member>
+        <member name="M:DeepLogic.Shared.Core.Reflection.GetClasses(System.String,System.String,System.Boolean)">
+            <summary>
+            Get a list of reflected class types within the specified namespace and assembly
+            </summary>
+            <param name="Namespace">The namespace to search</param>
+            <param name="Assembly">The target assembly</param>
+            <param name="Recursive">Recursively walk through the namespace</param>
+            <returns>List of discovered types</returns>
+        </member>
+        <member name="M:DeepLogic.Shared.DBObjects.Data.Initialize">
+            <summary>
+            Initialize the object, setting the creation date, version, and generating a guid.  This should generally be used when creating a new user.
+            </summary>
+        </member>
+        <member name="M:DeepLogic.Shared.DBObjects.Data.UpdateRevision">
+            <summary>
+            Set a new object revision identifier.  This is called any time there is a change that has been made to an object.
+            </summary>
+            <remarks>
+            This function will be called excessively in C# version 3 and under since we have to set parameters independantly.
+            In C# v4, we can instantiate the object with a single call (cleanly) using optional named parameters.
+            All code will be migrated to C# v4 once it is released, so this is a temporary inefficiency.
+            </remarks>
+        </member>
+        <member name="M:DeepLogic.Shared.DBObjects.Data.#ctor(System.Nullable{System.Guid})">
+            <summary>
+            Used to locate a (very) specific data entry -- This is usually only used to resolve a GUID conflict, which should never happen.
+            </summary>
+            <param name="guid">The GUID of the data entry in the form of xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</param>
+        </member>
+        <member name="M:DeepLogic.Shared.DBObjects.Data.#ctor(System.Boolean)">
+            <summary>
+            Used to create a new data entry
+            </summary>
+            <param name="New">Initialize the object as a new data entry</param>
+        </member>
+        <member name="M:DeepLogic.Shared.DBObjects.Data.#ctor">
+            <summary>
+            Create the object empty
+            </summary>
+        </member>
+        <member name="M:DeepLogic.Shared.DBObjects.Data.Equals(System.Object)">
+            <summary>
+            Shallow GUID match
+            </summary>
+        </member>
+        <member name="M:DeepLogic.Shared.DBObjects.DataGroup.Initialize">
+            <summary>
+            Initialize the object, setting the creation date, version, and generating a guid.  This should generally be used when creating a new user.
+            </summary>
+        </member>
+        <member name="M:DeepLogic.Shared.DBObjects.DataGroup.UpdateRevision">
+            <summary>
+            Set a new object revision identifier.  This is called any time there is a change that has been made to an object.
+            </summary>
+            <remarks>
+            This function will be called excessively in C# version 3 and under since we have to set parameters independantly.
+            In C# v4, we can instantiate the object with a single call (cleanly) using optional named parameters.
+            All code will be migrated to C# v4 once it is released, so this is a temporary inefficiency.
+            </remarks>
+        </member>
+        <member name="M:DeepLogic.Shared.DBObjects.DataGroup.#ctor(System.Guid)">
+            <summary>
+            Used to locate a (very) specific data entry -- This is usually only used to resolve a GUID conflict, which should never happen.
+            </summary>
+            <param name="guid">The GUID of the data entry in the form of xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</param>
+        </member>
+        <member name="M:DeepLogic.Shared.DBObjects.DataGroup.#ctor(System.Boolean)">
+            <summary>
+            Used to create a new data entry
+            </summary>
+            <param name="New">Initialize the object as a new data entry</param>
+        </member>
+        <member name="M:DeepLogic.Shared.DBObjects.DataGroup.#ctor">
+            <summary>
+            Create the object empty
+            </summary>
+        </member>
+        <member name="M:DeepLogic.Shared.DBObjects.DataGroup.Equals(System.Object)">
+            <summary>
+            Shallow GUID match
+            </summary>
+        </member>
+        <member name="M:DeepLogic.Shared.DBObjects.Identity.CreateOwnIdentity">
+            <summary>
+            Initialize the object, setting the creation date, version, and generating a guid.  This should generally be used when creating a new Identity.
+            </summary>
+        </member>
+        <member name="M:DeepLogic.Shared.DBObjects.Identity.UpdateRevision">
+            <summary>
+            Set a new object revision identifier.  This is called any time there is a change that has been made to an object.
+            </summary>
+            <remarks>
+            This function will be called excessively in C# version 3 and under since we have to set parameters independantly.
+            In C# v4, we can instantiate the object with a single call (cleanly) using optional named parameters.
+            All code will be migrated to C# v4 once it is released, so this is a temporary inefficiency.
+            </remarks>
+        </member>
+        <member name="M:DeepLogic.Shared.DBObjects.Identity.#ctor(System.String,System.Guid)">
+            <summary>
+            Primary method of locating an identity
+            </summary>
+            <param name="ip">The target's IP</param>
+            <param name="guid">The target's guid</param>
+        </member>
+        <member name="M:DeepLogic.Shared.DBObjects.Identity.#ctor(System.String)">
+            <summary>
+            Used to locate a node by IP
+            </summary>
+            <param name="ip">The target's ip</param>
+        </member>
+        <member name="M:DeepLogic.Shared.DBObjects.Identity.#ctor">
+            <summary>
+            Create the object empty
+            </summary>
+        </member>
+        <member name="M:DeepLogic.Shared.DBObjects.Identity.Equals(System.Object)">
+            <summary>
+            Shallow GUID match
+            </summary>
+        </member>
+        <member name="M:DeepLogic.Shared.EventObject.Copy">
+            <summary>
+            Copy/Ref of eventobject base data
+            </summary>
+            <returns>EventObject base data with embedded events</returns>
+        </member>
+        <member name="M:DeepLogic.Shared.EventObject.Copy(DeepLogic.Shared.EventObject)">
+            <summary>
+            Deep copy of eventobject base data
+            </summary>
+        </member>
+        <member name="T:DeepLogic.Shared.Events">
+            <summary>
+            Global serialized events
+            </summary>
+            <remarks>
+            As this is a bitfield, multiple events may be meshed together, however this is not yet recommended. Use the nested event architecture until this is better supported.
+            </remarks>
+        </member>
+        <member name="T:DeepLogic.Shared.DBObjects.User">
+            <summary>
+            Persistent User Object
+            </summary>
+        </member>
+        <member name="M:DeepLogic.Shared.DBObjects.User.Initialize">
+            <summary>
+            Initialize the object, setting the creation date, version, and generating a guid.  This should generally be used when creating a new user.
+            </summary>
+        </member>
+        <member name="M:DeepLogic.Shared.DBObjects.User.UpdateRevision">
+            <summary>
+            Set a new object revision identifier.  This is called any time there is a persisted change that has been made to an object.
+            </summary>
+            <remarks>
+            This function will be called excessively in C# version 3 and under since we have to set parameters independntly.
+            In C# v4, we can instantiate the object with a single call (cleanly) using optional named parameters.
+            All code will be migrated to C# v4 once it is released, so this is a temporary performance issue.
+            </remarks>
+        </member>
+        <member name="M:DeepLogic.Shared.DBObjects.User.Upgrade">
+            <summary>
+            Upgrade methods for when core changes are required in a live environment
+            </summary>
+        </member>
+        <member name="M:DeepLogic.Shared.DBObjects.User.Repair">
+            <summary>
+            Stub, can be used to sanity-check and repair data in the event of unforeseen problems
+            </summary>
+        </member>
+        <member name="M:DeepLogic.Shared.DBObjects.User.Logout">
+            <summary>
+            Remove all user tokens
+            </summary>
+            <returns>AUTH_LOGOUT event code</returns>
+        </member>
+        <member name="M:DeepLogic.Shared.DBObjects.User.Logout(System.Nullable{System.Guid})">
+            <summary>
+            Remove single user token
+            </summary>
+            <param name="Token">Valid user session token</param>
+            <returns>AUTH_LOGOUT event code</returns>
+        </member>
+        <member name="M:DeepLogic.Shared.DBObjects.User.#ctor(System.String,System.String,System.Nullable{System.Guid})">
+            <summary>
+            Used to locate a (very) specific user -- This is only used to resolve a GUID conflict
+            </summary>
+            <remarks>GUID conflicts are only theoretically possible, and should absolutely never happen even on large scales</remarks>
+            <param name="guid">The GUID of the user in the form of xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</param>
+            <param name="name">The target's username</param>
+            <param name="password">The target's plain-text password</param>
+        </member>
+        <member name="M:DeepLogic.Shared.DBObjects.User.#ctor(System.String,System.String)">
+            <summary>
+            Primary method of locating an user using normal credentials
+            </summary>
+            <param name="name">The target's username</param>
+            <param name="password">The target's plain-text password</param>
+        </member>
+        <member name="M:DeepLogic.Shared.DBObjects.User.#ctor(System.Nullable{System.Guid})">
+            <summary>
+            Used to locate an user by account GUID
+            </summary>
+            <param name="name">The target's GUID</param>
+        </member>
+        <member name="M:DeepLogic.Shared.DBObjects.User.#ctor(System.Int32,System.Nullable{System.Guid},System.Nullable{System.Guid},System.String,System.String,System.String,System.String,System.String,System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.String,System.String,System.Nullable{System.Guid},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.UInt64})">
+            <summary>
+            Used to locate an user using named parameters
+            </summary>
+        </member>
+        <member name="M:DeepLogic.Shared.DBObjects.User.#ctor">
+            <summary>
+            Create an empty user object
+            </summary>
+        </member>
+        <member name="M:DeepLogic.Shared.DBObjects.User.ToString">
+            <returns>[ObjUUID:</returns>
+        </member>
+        <member name="P:DeepLogic.Shared.DBObjects.User.Name">
+            <summary>
+            User login name
+            </summary>
+        </member>
+        <member name="P:DeepLogic.Shared.DBObjects.User.Password">
+            <summary>
+            Set a new password
+            </summary>
+        </member>
+        <member name="P:DeepLogic.Shared.DBObjects.User.PasswordHash">
+            <summary>
+            Salted MD5 hash of the password
+            </summary>
+        </member>
+        <member name="P:DeepLogic.Shared.DBObjects.User.Email">
+            <summary>
+            Email address
+            </summary>
+            <remarks>Formatting and verification should be done on the UserCom</remarks>
+        </member>
+        <member name="P:DeepLogic.Shared.DBObjects.User.FirstName">
+            <summary>
+            User's real firstname
+            </summary>
+        </member>
+        <member name="P:DeepLogic.Shared.DBObjects.User.LastName">
+            <summary>
+            User's real lastname
+            </summary>
+        </member>
+        <member name="P:DeepLogic.Shared.DBObjects.User.CreatedOn">
+            <summary>
+            User object creation datetime
+            </summary>
+        </member>
+        <member name="P:DeepLogic.Shared.DBObjects.User.LastLogin">
+            <summary>
+            Last authentication datetime
+            </summary>
+        </member>
+        <member name="P:DeepLogic.Shared.DBObjects.User.LastIP">
+            <summary>
+            Last remote login IP
+            </summary>
+        </member>
+        <member name="P:DeepLogic.Shared.DBObjects.User.Guid">
+            <summary>
+            Unique user/object identifier
+            </summary>
+        </member>
+        <member name="P:DeepLogic.Shared.DBObjects.User.AccessType">
+            <summary>
+            DEPRECATED: Failsafe permissions overrides
+            </summary>
+        </member>
+        <member name="P:DeepLogic.Shared.DBObjects.User.Version">
+            <summary>
+            Object version
+            </summary>
+        </member>
+        <member name="P:DeepLogic.Shared.DBObjects.User.Revision">
+            <summary>
+            Object revision
+            </summary>
+            <remarks>A new revision is generated any time a persisted change occurs</remarks>
+        </member>
+        <member name="P:DeepLogic.Shared.DBObjects.User.Permissions">
+            <summary>
+            User permission flags
+            </summary>
+        </member>
+        <member name="P:DeepLogic.Shared.DBObjects.User.NewToken">
+            <summary>
+            Generate and store a new authentication token
+            </summary>
+        </member>
+        <member name="P:DeepLogic.Shared.DBObjects.User.TokenArray">
+            <summary>
+            List of all currently valid tokens
+            </summary>
+        </member>
+        <member name="P:DeepLogic.Shared.DBObjects.User.SessionToken">
+            <summary>
+            DEPRECATED: Sessions are now handled on WCF
+            </summary>
+        </member>
+        <member name="P:DeepLogic.Shared.DBObjects.User.MaxTokens">
+            <summary>
+            Maximum number of simultaneous logins the user can have
+            </summary>
+        </member>
+    </members>
+</doc>

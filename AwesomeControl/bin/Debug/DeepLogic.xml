@@ -1,0 +1,391 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DeepLogic</name>
+    </assembly>
+    <members>
+        <member name="F:DeepLogic.Core.Benchmarking._sw">
+            <summary>
+            Benchmark Timer
+            </summary>
+        </member>
+        <member name="F:DeepLogic.Core.Benchmarking.ActivatedTestUsers">
+            <summary>
+            Pseudo-user object count from database
+            </summary>
+        </member>
+        <member name="M:DeepLogic.Core.Benchmarking.UpdateActivatedTestUsers">
+            <summary>
+            Update Pseudo-user object list
+            </summary>
+        </member>
+        <member name="M:DeepLogic.Core.Benchmarking.TypeLookup(System.UInt64)">
+            <summary>
+            Perform type lookup benchmarking through reflection
+            </summary>
+            <param name="count">Number of lookups to perform</param>
+            <returns>Benchmark definitions and values</returns>
+        </member>
+        <member name="M:DeepLogic.Core.Benchmarking.AddUsers(System.UInt64)">
+            <summary>
+            Benchmark adding pseudo-user objects to the database
+            </summary>
+            <param name="count">Number of test objects</param>
+            <returns>Benchmark definitions and values</returns>
+        </member>
+        <member name="M:DeepLogic.Core.Benchmarking.DeleteUsers">
+            <summary>
+            Benchmark deletion of all pseudo-user objects
+            </summary>
+            <returns>Benchmark definitions and values</returns>
+        </member>
+        <member name="M:DeepLogic.Core.Benchmarking.ModifyUsers(System.UInt64)">
+            <summary>
+            Benchmark alteration of pseudo-user objects
+            </summary>
+            <param name="count">Optional: Limit the number of pseudo-user objects to modify</param>
+            <returns>Benchmark definitions and values</returns>
+        </member>
+        <member name="M:DeepLogic.Core.Benchmarking.RetrieveUsers(System.UInt64)">
+            <summary>
+            Benchmark retrieval and activation of pseudo-user objects
+            </summary>
+            <param name="count">Optional: Limit the number of pseudo-user objects to lookup</param>
+            <returns>Benchmark definitions and values</returns>
+        </member>
+        <member name="M:DeepLogic.Core.Benchmarking.AddData(System.UInt64)">
+            <summary>
+            Benchmark adding of test data
+            </summary>
+            <param name="count">Number of pseudo-data objects</param>
+            <returns>Benchmark definitions and values</returns>
+        </member>
+        <member name="M:DeepLogic.Core.Benchmarking.RetrieveData(System.UInt64)">
+            <summary>
+            Benchmark retrieval and activation of pseudo-data objects
+            </summary>
+            <param name="count">Optional: Limit the number of pseudo-data objects to lookup</param>
+            <returns>Benchmark definitions and values</returns>
+        </member>
+        <member name="M:DeepLogic.Core.SimpleAES.GenerateEncryptionKey">
+            -------------- Two Utility Methods (not used but may be useful) -----------
+            Generates an encryption key.
+        </member>
+        <member name="M:DeepLogic.Core.SimpleAES.GenerateEncryptionVector">
+            Generates a unique encryption vector
+        </member>
+        <member name="M:DeepLogic.Core.SimpleAES.EncryptToString(System.String)">
+            ----------- The commonly used methods ------------------------------    
+            Encrypt some text and return a string suitable for passing in a URL.
+        </member>
+        <member name="M:DeepLogic.Core.SimpleAES.Encrypt(System.Byte[])">
+            Encrypt some bytes and return an encrypted byte array.
+        </member>
+        <member name="M:DeepLogic.Core.SimpleAES.Encrypt(System.String)">
+            Encrypt some text and return an encrypted byte array.
+        </member>
+        <member name="M:DeepLogic.Core.SimpleAES.DecryptString(System.String)">
+            The other side: Decryption methods
+        </member>
+        <member name="M:DeepLogic.Core.SimpleAES.DecryptToString(System.Byte[])">
+            Decryption when working with byte arrays.    
+        </member>
+        <member name="M:DeepLogic.Core.SimpleAES.StrToByteArray(System.String)">
+            Convert a string to a byte array.  NOTE: Normally we'd create a Byte Array from a string using an ASCII encoding (like so).
+        </member>
+        <member name="T:DeepLogic.Core.ExpConsole.C_Driver">
+            <summary>
+             Experimental Console Service
+            </summary>
+        </member>
+        <member name="T:DeepLogic.Core.ExpConsole.Modules.Database">
+            <summary>
+             Database Console Module
+            </summary>
+        </member>
+        <member name="M:DeepLogic.Core.ExpConsole.Modules.Database.#ctor">
+            <summary>
+             Constructor Defaults
+            </summary>
+        </member>
+        <member name="M:DeepLogic.Core.ExpConsole.Modules.Database.ProcessCommand(System.Collections.Generic.List{System.String})">
+            <summary>
+             Command Processor
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:DeepLogic.Core.ExpConsole.Modules.Database.GetDescription">
+            <summary>
+             Module Description
+            </summary>
+        </member>
+        <member name="P:DeepLogic.Core.ExpConsole.Modules.Database.ConsoleModuleName">
+            <summary>
+             Module Name
+            </summary>
+        </member>
+        <member name="M:DeepLogic.Database.db4o.Com.Identity.DeleteNode(DeepLogic.Shared.DBObjects.Identity)">
+            <summary>
+            Remove stored node identity
+            </summary>
+            <param name="IdentityObject">IdentityObject containing Node to be removed</param>
+        </member>
+        <member name="M:DeepLogic.Database.db4o.Com.Data.SetDataGroupHeader(DeepLogic.Shared.DBObjects.DataGroup,System.Object)">
+            <summary>
+            Query and set the header for a Shared.DBObjects.DataGroup
+            </summary>
+            <param name="Modal"></param>
+            <param name="Header"></param>
+        </member>
+        <member name="T:DeepLogic.Net.Channels">
+            <summary>
+            Core channel service provider
+            </summary>
+        </member>
+        <member name="M:DeepLogic.Net.Channels.Subscribe(DeepLogic.Shared.Net.Channels.Channel,DeepLogic.Shared.Net.Channels.Subscriber,System.Boolean)">
+            <summary>
+            Subscribe to a channel
+            </summary>
+            <param name="Channel">Channel Key</param>
+            <param name="CSI">Channel Subscriber identity</param>
+        </member>
+        <member name="M:DeepLogic.Net.Channels.Unsubscribe(DeepLogic.Shared.Net.Channels.Channel,DeepLogic.Shared.Net.Channels.Subscriber,System.Boolean)">
+            <summary>
+            Unsubscribe to a channel
+            </summary>
+            <param name="Channel">Channel Key</param>
+            <param name="CSI">Channel Subscriber identity</param>
+        </member>
+        <member name="T:DeepLogic.Net.Channels.BuiltIn.Control">
+            <summary>
+            Built-in Error Channel
+            </summary>
+        </member>
+        <member name="T:DeepLogic.Net.Channels.BuiltIn.Errors">
+            <summary>
+            Built-in Error Channel
+            </summary>
+        </member>
+        <member name="M:DeepLogic.Database.db4o.Com.User.GenerateAuthObject(System.String,System.String)">
+            <summary>
+            Advanced lookups ONLY!  This is a Very, very expensive operation (800ms @ 10k objects).  Not finalized
+            </summary>
+        </member>
+        <member name="M:DeepLogic.Database.db4o.Com.User.Logout(DeepLogic.Shared.AuthObject)">
+            <summary>
+            Remove all active access tokens for the user
+            </summary>
+            <param name="AuthObject">Auth Object</param>
+        </member>
+        <member name="M:DeepLogic.Database.db4o.Com.User.Logout(DeepLogic.Object_Wrappers.NetworkClient)">
+            <summary>
+            Remove a single access token identified by the active Network Client
+            </summary>
+            <param name="Client">Network Client</param>
+        </member>
+        <member name="F:DeepLogic.Database.db4o.ObjectDB.UseCache">
+            <summary>
+            Toggle internal secondary cache
+            </summary>
+        </member>
+        <member name="F:DeepLogic.Database.db4o.ObjectDB.ODB_Identity">
+            <summary>
+            Identity Database
+            </summary>
+        </member>
+        <member name="F:DeepLogic.Database.db4o.ObjectDB.ODB_Settings">
+            <summary>
+            Settings Database
+            </summary>
+        </member>
+        <member name="F:DeepLogic.Database.db4o.ObjectDB.ODB_Users">
+            <summary>
+            User Database
+            </summary>
+        </member>
+        <member name="F:DeepLogic.Database.db4o.ObjectDB.ODB_Security">
+            <summary>
+            Security Database
+            </summary>
+        </member>
+        <member name="F:DeepLogic.Database.db4o.ObjectDB.ODB_DataGroup">
+            <summary>
+            DataGroup Database
+            </summary>
+        </member>
+        <member name="F:DeepLogic.Database.db4o.ObjectDB.ODB_DataPool">
+            <summary>
+            DataPool Database
+            </summary>
+        </member>
+        <member name="F:DeepLogic.Database.db4o.ObjectDB.UserCom">
+            <summary>
+            User API
+            </summary>
+        </member>
+        <member name="F:DeepLogic.Database.db4o.ObjectDB.DataCom">
+            <summary>
+            Data API
+            </summary>
+        </member>
+        <member name="F:DeepLogic.Database.db4o.ObjectDB.IdentityCom">
+            <summary>
+            Identity API
+            </summary>
+        </member>
+        <member name="F:DeepLogic.Database.db4o.ObjectDB.OpenDatabaseList">
+            <summary>
+            Active Databases
+            </summary>
+        </member>
+        <member name="F:DeepLogic.Database.db4o.ObjectDB.PendingTransactions">
+            <summary>
+            Pending transaction list by database to db4o
+            </summary>
+        </member>
+        <member name="F:DeepLogic.Database.db4o.ObjectDB.WriteTransactionThreshold">
+            <summary>
+            Transaction count threshhold to commit buffered database transactions
+            </summary>
+        </member>
+        <member name="F:DeepLogic.Database.db4o.ObjectDB.WriteTimeThreashold">
+            <summary>
+            Time threshhold to commit buffered database transactions
+            </summary>
+        </member>
+        <member name="M:DeepLogic.Database.db4o.ObjectDB.ObjectPoolCount(Db4objects.Db4o.IObjectContainer)">
+            <summary>
+            Query object count by database
+            </summary>
+            <param name="Database"></param>
+            <returns>Number of objects within a database</returns>
+        </member>
+        <member name="M:DeepLogic.Database.db4o.ObjectDB.CommitTransactionWatcher(System.Object,System.Timers.ElapsedEventArgs)">
+            <summary>
+            Commit pending transactions to all managed databases
+            </summary>
+        </member>
+        <member name="M:DeepLogic.Database.db4o.ObjectDB.StoreObject``1(``0,Db4objects.Db4o.IObjectContainer,System.Collections.Generic.List{``0})">
+            <summary>
+            Queue an object to be stored into the database
+            </summary>
+            <typeparam name="T">DB Object Type</typeparam>
+            <param name="Obj">Object to be stored</param>
+            <param name="Database">The target database</param>
+            <param name="Cache">The optional matching cache container to manage</param>
+        </member>
+        <member name="M:DeepLogic.Database.db4o.ObjectDB.DeleteObject``1(``0,Db4objects.Db4o.IObjectContainer,System.Collections.Generic.List{``0})">
+            <summary>
+            Delete an object from the database
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="Obj"></param>
+            <param name="Database"></param>
+            <param name="Cache"></param>
+        </member>
+        <member name="M:DeepLogic.Database.db4o.ObjectDB.OpenDB(Db4objects.Db4o.IObjectContainer,System.Boolean)">
+            <summary>
+            Open all managed databases
+            </summary>
+        </member>
+        <member name="M:DeepLogic.Database.db4o.ObjectDB.#ctor(System.Int32)">
+            <summary>
+            Object database manager
+            </summary>
+            <param name="Commit_WatchDogFrequency">Commit WatchDog timer frequency</param>
+        </member>
+        <member name="M:DeepLogic.Database.db4o.ObjectDB.OnlineDefrag">
+            <summary>
+            Backup and defrag all managed databases (Primarily used to release freed blocks prior to an offline transfer)
+            </summary>
+        </member>
+        <member name="M:DeepLogic.Database.db4o.ObjectDB.GetHeader(Db4objects.Db4o.IObjectContainer)">
+            <summary>
+            Retrieve the unique database header
+            </summary>
+            <param name="Database">Database Container</param>
+            <returns></returns>
+        </member>
+        <member name="M:DeepLogic.Database.db4o.ObjectDB.CloseDB(Db4objects.Db4o.IObjectContainer,System.Boolean)">
+            <summary>
+            Close a database
+            </summary>
+            <param name="DB"></param>
+            <param name="DontLog"></param>
+        </member>
+        <member name="M:DeepLogic.Database.db4o.ObjectDB.UpgradeAllObjects(Db4objects.Db4o.IObjectContainer)">
+            <summary>
+            Upgrade all IManagement DB objects within a database to the latest ModernVersion available
+            </summary>
+            <param name="Database">Database Container</param>
+        </member>
+        <member name="M:DeepLogic.Database.db4o.ObjectDB.CreateDatabases(Db4objects.Db4o.IObjectContainer)">
+            <summary>
+            Recreate the managed databases
+            </summary>
+        </member>
+        <member name="M:DeepLogic.Database.db4o.ObjectDB.Shutdown">
+            <summary>
+            Shutdown all managed object databases
+            </summary>
+        </member>
+        <member name="M:DeepLogic.Database.db4o.ObjectDB.Finalize">
+            <summary>
+            Destructor Shutdown
+            </summary>
+        </member>
+        <member name="P:DeepLogic.Database.db4o.ObjectDB.TotalPendingCommits">
+            <summary>
+            Total pending transactions across all databases
+            </summary>
+        </member>
+        <member name="T:DeepLogic.Database.db4o.ObjectDB.DBCommitInfo">
+            <summary>
+            Database commit information
+            </summary>
+        </member>
+        <member name="F:DeepLogic.Database.db4o.ObjectDB.DBCommitInfo.PendingCommits">
+            <summary>
+            Current pending commits for the database
+            </summary>
+        </member>
+        <member name="F:DeepLogic.Database.db4o.ObjectDB.DBCommitInfo.LastCommit">
+            <summary>
+            DateTime of the last commit that occured on the database
+            </summary>
+        </member>
+        <member name="M:DeepLogic.Net.WCF.ArduinoDriver.ReadDigital(System.Int32)">
+            <summary>
+            Read a digital pin from the MCU
+            </summary>
+            <param name="Pin">Pin to read (1-44 [AT1280])</param>
+            <returns>(int)Boolean</returns>
+        </member>
+        <member name="T:DeepLogic.Net.ResponseCodes">
+            <summary>
+            Deprecated
+            </summary>
+        </member>
+        <member name="M:DeepLogic.Server.Initialize">
+            <summary>
+            Automatically setup and start the server
+            </summary>
+        </member>
+        <member name="T:DeepLogic.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:DeepLogic.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:DeepLogic.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>
